@@ -9,6 +9,8 @@ module.exports = {
       Applications: resolve(__dirname, '../src/pages/ApplicationsPage'),
       Import: resolve(__dirname, '../src/pages/ImportPage'),
       ComponentSettings: resolve(__dirname, '../src/pages/ComponentSettingsPage'),
+      PipelineRuns: resolve(__dirname, '../src/hacbs/pages/PipelineRunPage'),
+      // PipelineRunDetails: resolve(__dirname, '../src/hacbs/pages/PipelineDetailsPage'),
     },
   },
   extensions: [
@@ -104,6 +106,60 @@ module.exports = {
       properties: {
         href: '/app-studio',
         name: 'Applications',
+      },
+    },
+    {
+      type: 'console.navigation/href',
+      properties: {
+        href: '/app-studio/pipelineruns',
+        name: 'Pipeline Runs',
+      },
+    },
+    {
+      type: 'core.navigation/href',
+      properties: {
+        href: '/app-studio/pipelineruns',
+        name: 'Pipeline Runs',
+      },
+    },
+    {
+      type: 'console.page/route',
+      properties: {
+        path: '/app-studio',
+        exact: true,
+        component: {
+          $codeRef: 'PipelineRuns',
+        },
+      },
+    },
+    {
+      type: 'core.page/route',
+      properties: {
+        path: '/app-studio',
+        exact: true,
+        component: {
+          $codeRef: 'PipelineRuns',
+        },
+      },
+    },
+    {
+      type: 'console.page/route',
+      properties: {
+        path: '/app-studio/pipelineruns',
+        exact: true,
+        component: {
+          $codeRef: 'PipelineRuns',
+        },
+      },
+    },
+    {
+      type: 'core.page/route',
+      properties: {
+        path: '/app-studio/pipelineruns',
+        exact: true,
+        component: {
+          $codeRef: 'PipelineRuns',
+        },
       },
     },
   ],
