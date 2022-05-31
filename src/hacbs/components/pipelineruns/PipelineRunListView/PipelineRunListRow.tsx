@@ -23,7 +23,6 @@ const PipelineListRow: React.FC<RowFunctionArgs<PipelineRunKind>> = ({ obj }) =>
       </TableData>
       <TableData className={pipelineRunTableColumnClasses.taskstatus}>
         {obj.status.conditions[0].status === 'False' ? 'Failed' : 'Succeeded'}
-        {/* {obj.status.taskRuns[0].status} */}
       </TableData>
       <TableData className={pipelineRunTableColumnClasses.started}>
         <Timestamp
