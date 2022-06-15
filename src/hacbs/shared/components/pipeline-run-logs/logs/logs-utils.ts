@@ -4,7 +4,7 @@ import {
   k8sGetResource,
 } from '@openshift/dynamic-plugin-sdk-utils';
 import { saveAs } from 'file-saver';
-import { LineBuffer } from '../../../utils/line-buffer';
+import { LineBuffer } from '../../../../../shared/utils/line-buffer';
 import { ContainerSpec, ContainerStatus, PodKind } from '../../types';
 import { PLRTaskRunData, PLRTaskRuns } from '../types';
 import {

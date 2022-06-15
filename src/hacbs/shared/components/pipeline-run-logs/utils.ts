@@ -8,7 +8,7 @@ import { global_danger_color_100 as failureColor } from '@patternfly/react-token
 import i18next from 'i18next';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
-import { K8sGroupVersionKind } from '../../../dynamic-plugin-sdk';
+import { K8sGroupVersionKind } from '../../../../dynamic-plugin-sdk';
 
 export const LOG_SOURCE_RESTARTING = 'restarting';
 export const LOG_SOURCE_RUNNING = 'running';

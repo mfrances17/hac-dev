@@ -1,25 +1,25 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { PageSection, PageSectionVariants } from '@patternfly/react-core';
-// import PipelineDetailsView from '../components/PipelineDetailsView/PipelineDetailsView';
 import NamespacedPage from '../../components/NamespacedPage/NamespacedPage';
 import PageLayout from '../../components/PageLayout/PageLayout';
 import { useQuickstartCloseOnUnmount } from '../../hooks/useQuickstartCloseOnUnmount';
 import { getQueryArgument } from '../../shared/utils';
-import PipelineRunsListView from '../components/pipelineruns/PipelineRunListView/PipelineRunsListView';
+import PipelineDetailsView from '../components/PipelineRunDetailsView/PipelineRunDetailsView';
+import PipelineRunsListView from '../components/PipelineRunListView/PipelineRunsListView';
 
 const PipelineRunPage = () => {
   useQuickstartCloseOnUnmount();
-  const applicationName = getQueryArgument('name');
+  const pipelineRunName = getQueryArgument('name');
 
   return (
     <NamespacedPage>
-      {applicationName ? (
+      {pipelineRunName ? (
         <React.Fragment>
           <Helmet>
             <title>Pipeline Run Details Page</title>
           </Helmet>
-          {/* <PipelineDetailsView applicationName={applicationName} /> */}
+          <PipelineDetailsView />
         </React.Fragment>
       ) : (
         <React.Fragment>

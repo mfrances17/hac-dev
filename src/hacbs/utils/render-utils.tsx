@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ExternalLink from '../shared/components/links/ExternalLink';
+import ExternalLink from '../../shared/components/links/ExternalLink';
 
 import './render-utils.scss';
 

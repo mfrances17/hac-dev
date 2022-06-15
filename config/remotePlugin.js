@@ -10,7 +10,6 @@ module.exports = {
       Import: resolve(__dirname, '../src/pages/ImportPage'),
       ComponentSettings: resolve(__dirname, '../src/pages/ComponentSettingsPage'),
       PipelineRuns: resolve(__dirname, '../src/hacbs/pages/PipelineRunPage'),
-      // PipelineRunDetails: resolve(__dirname, '../src/hacbs/pages/PipelineDetailsPage'),
     },
   },
   extensions: [

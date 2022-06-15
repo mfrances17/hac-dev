@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import isString from 'lodash/isString';
-import { TimeoutError } from '../../utils/error/http-error';
+import { TimeoutError } from '../../../../shared/utils/error/http-error';
 
 import './StatusBox.scss';
 
