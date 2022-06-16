@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-// import { useK8sWatchResource } from '@openshift/dynamic-plugin-sdk-utils';
 import { useK8sWatchResource } from '@openshift/dynamic-plugin-sdk-utils';
 import {
   Bullseye,
@@ -17,10 +16,9 @@ import {
 } from '@patternfly/react-core';
 import { CubesIcon } from '@patternfly/react-icons/dist/esm/icons/cubes-icon';
 import { NamespaceContext } from '../../../components/NamespacedPage/NamespacedPage';
-import { PipelineRunGroupVersionKind } from '../../../models';
 import { Table } from '../../../shared';
-import { PipelineRunKind } from '../../../types';
-// import { useK8sWatchResource } from '../../../dynamic-plugin-sdk';
+import { PipelineRunGroupVersionKind } from '../../models';
+import { PipelineRunKind } from '../../types';
 import { PipelineRunListHeader } from './PipelineRunListHeader';
 import PipelineRunListRow from './PipelineRunListRow';
 

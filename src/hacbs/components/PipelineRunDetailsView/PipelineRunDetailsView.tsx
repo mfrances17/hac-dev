@@ -2,16 +2,13 @@ import * as React from 'react';
 import { useK8sWatchResource } from '@openshift/dynamic-plugin-sdk-utils';
 import { Bullseye, Spinner } from '@patternfly/react-core';
 import { NamespaceContext } from '../../../components/NamespacedPage/NamespacedPage';
-import { PipelineRunGroupVersionKind } from '../../../models';
-// import { useK8sWatchResource } from '../../../dynamic-plugin-sdk';
+import { PipelineRunGroupVersionKind } from '../../models';
 import { PipelineRunKind } from '../../types';
 import { calculateDuration } from '../../utils/pipeline-utils';
 import './TriggeredBySection.scss';
 import './PipelineRunDetails.scss';
 
-export interface PipelineRunDetailsProps {
-  // obj: PipelineRunKind;
-}
+export interface PipelineRunDetailsProps {}
 
 export const PipelineRunsDetailsView: React.FC<PipelineRunDetailsProps> = () => {
   const { namespace } = React.useContext(NamespaceContext);
@@ -36,17 +33,6 @@ export const PipelineRunsDetailsView: React.FC<PipelineRunDetailsProps> = () => 
     typeof pipelineRun.status.startTime === 'string' ? pipelineRun.status.startTime : '',
     typeof pipelineRun.status.completionTime === 'string' ? pipelineRun.status.completionTime : '',
   );
-
-  // const allLabels = pipelineRun.metadata.labels;
-  // console.log(Object.entries(allLabels));
-
-  // allLabels.map(label =>
-
-  //   const labelEquals = allLabels.ForEach(label) {
-  //  }
-
-  // console.log(pipelineRun);
-  //   console.log(pipelineRun.metadata.labels['build.appstudio.openshift.io/component']);
 
   return (
     <>

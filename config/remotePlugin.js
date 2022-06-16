@@ -107,60 +107,63 @@ module.exports = {
         name: 'Applications',
       },
     },
-    {
-      type: 'console.navigation/href',
-      properties: {
-        href: '/app-studio/pipelineruns',
-        name: 'Pipeline Runs',
-      },
-    },
-    {
-      type: 'core.navigation/href',
-      properties: {
-        href: '/app-studio/pipelineruns',
-        name: 'Pipeline Runs',
-      },
-    },
-    {
-      type: 'console.page/route',
-      properties: {
-        path: '/app-studio',
-        exact: true,
-        component: {
-          $codeRef: 'PipelineRuns',
-        },
-      },
-    },
-    {
-      type: 'core.page/route',
-      properties: {
-        path: '/app-studio',
-        exact: true,
-        component: {
-          $codeRef: 'PipelineRuns',
-        },
-      },
-    },
-    {
-      type: 'console.page/route',
-      properties: {
-        path: '/app-studio/pipelineruns',
-        exact: true,
-        component: {
-          $codeRef: 'PipelineRuns',
-        },
-      },
-    },
-    {
-      type: 'core.page/route',
-      properties: {
-        path: '/app-studio/pipelineruns',
-        exact: true,
-        component: {
-          $codeRef: 'PipelineRuns',
-        },
-      },
-    },
+    // Remove comments below and re-run 'npm run start:prod:beta'
+    // to view Pipeline Runs in the left-hand nav
+    // TODO change this when feature flags become available
+    // {
+    //   type: 'console.navigation/href',
+    //   properties: {
+    //     href: '/app-studio/pipelineruns',
+    //     name: 'Pipeline Runs',
+    //   },
+    // },
+    // {
+    //   type: 'core.navigation/href',
+    //   properties: {
+    //     href: '/app-studio/pipelineruns',
+    //     name: 'Pipeline Runs',
+    //   },
+    // },
+    // {
+    //   type: 'console.page/route',
+    //   properties: {
+    //     path: '/app-studio',
+    //     exact: true,
+    //     component: {
+    //       $codeRef: 'PipelineRuns',
+    //     },
+    //   },
+    // },
+    // {
+    //   type: 'core.page/route',
+    //   properties: {
+    //     path: '/app-studio',
+    //     exact: true,
+    //     component: {
+    //       $codeRef: 'PipelineRuns',
+    //     },
+    //   },
+    // },
+    // {
+    //   type: 'console.page/route',
+    //   properties: {
+    //     path: '/app-studio/pipelineruns',
+    //     exact: true,
+    //     component: {
+    //       $codeRef: 'PipelineRuns',
+    //     },
+    //   },
+    // },
+    // {
+    //   type: 'core.page/route',
+    //   properties: {
+    //     path: '/app-studio/pipelineruns',
+    //     exact: true,
+    //     component: {
+    //       $codeRef: 'PipelineRuns',
+    //     },
+    //   },
+    // },
   ],
   sharedModules: {
     'react-router-dom': { singleton: true },

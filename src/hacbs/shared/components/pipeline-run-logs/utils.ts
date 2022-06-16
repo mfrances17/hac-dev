@@ -75,11 +75,9 @@ export enum SucceedConditionReason {
 
 export const PodModel: K8sModelCommon = {
   apiVersion: 'v1',
-  // t('public~Pod')
   plural: 'pods',
   namespaced: true,
   kind: 'Pod',
-  // t('public~Pods')
 };
 
 export const PodGroupVersionKind: K8sGroupVersionKind = {
@@ -96,8 +94,6 @@ export const PipelineRunGroupVersionKind: K8sGroupVersionKind = {
 export const PipelineRunModel: K8sModelCommon = {
   apiGroup: 'tekton.dev',
   apiVersion: 'v1beta1',
-  // t('PipelineRun')
-  // t('PipelineRuns')
   plural: 'pipelineruns',
   namespaced: true,
   kind: 'PipelineRun',

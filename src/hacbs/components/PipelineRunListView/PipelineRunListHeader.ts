@@ -15,10 +15,6 @@ export const PipelineRunListHeader = () => {
       title: 'Name',
       props: { className: pipelineRunTableColumnClasses.name },
     },
-    // {
-    //   title: 'Namespace',
-    //   props: { className: pipelineRunTableColumnClasses.namespace },
-    // },
     {
       title: 'Started',
       props: { className: pipelineRunTableColumnClasses.started },
@@ -31,10 +27,6 @@ export const PipelineRunListHeader = () => {
       title: 'Status',
       props: { className: pipelineRunTableColumnClasses.status },
     },
-    // {
-    //   title: 'Task Status',
-    //   props: { className: pipelineRunTableColumnClasses.taskstatus },
-    // },
     {
       title: 'Type',
       props: { className: pipelineRunTableColumnClasses.duration },
