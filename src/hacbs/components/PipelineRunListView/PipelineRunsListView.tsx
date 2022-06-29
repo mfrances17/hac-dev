@@ -49,9 +49,9 @@ const PipelineRunsListView: React.FC = () => {
       <EmptyState variant={EmptyStateVariant.large}>
         <EmptyStateIcon icon={CubesIcon} />
         <Title headingLevel="h4" size="lg">
-          No pipeline runs
+          No PipelineRuns
         </Title>
-        <EmptyStateBody>To get started, create a pipeline run.</EmptyStateBody>
+        <EmptyStateBody>To get started, create a PipelineRun.</EmptyStateBody>
         <Button
           variant="primary"
           component={(props) => <Link {...props} to="/app-studio/import" />}
@@ -71,7 +71,7 @@ const PipelineRunsListView: React.FC = () => {
               variant="primary"
               component={(props) => <Link {...props} to="/app-studio/import" />}
             >
-              Create pipeline run
+              Create PipelineRun
             </Button>
           </ToolbarItem>
         </ToolbarContent>

@@ -59,7 +59,7 @@ const PipelineListRow: React.FC<RowFunctionArgs<PipelineRunKind>> = ({ obj }) =>
                 setKebabOpen(false);
               }}
             >
-              Stop{' '}
+              Stop
             </DropdownItem>,
           ]}
         />
