@@ -56,7 +56,7 @@ const PipelineRunsListView: React.FC = () => {
           variant="primary"
           component={(props) => <Link {...props} to="/app-studio/import" />}
         >
-          Create pipeline run
+          Create PipelineRun
         </Button>
       </EmptyState>
     );
@@ -78,7 +78,7 @@ const PipelineRunsListView: React.FC = () => {
       </Toolbar>
       <Table
         data={pipelineRuns}
-        aria-label="Pipeline List"
+        aria-label="PipelineRun List"
         Header={PipelineRunListHeader}
         Row={PipelineRunListRow}
         loaded={loaded}

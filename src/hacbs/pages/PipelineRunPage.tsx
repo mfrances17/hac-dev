@@ -26,7 +26,7 @@ const PipelineRunPage = () => {
           <Helmet>
             <title>Pipeline Runs List Page</title>
           </Helmet>
-          <PageLayout title="Pipelines" description="Pipeline runs are listed here.">
+          <PageLayout title="PipelineRuns" description="Pipeline runs are listed here.">
             <PageSection
               padding={{ default: 'noPadding' }}
               variant={PageSectionVariants.light}

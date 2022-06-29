@@ -114,34 +114,14 @@ module.exports = {
     //   type: 'console.navigation/href',
     //   properties: {
     //     href: '/app-studio/pipelineruns',
-    //     name: 'Pipeline Runs',
+    //     name: 'PipelineRuns',
     //   },
     // },
     // {
     //   type: 'core.navigation/href',
     //   properties: {
     //     href: '/app-studio/pipelineruns',
-    //     name: 'Pipeline Runs',
-    //   },
-    // },
-    // {
-    //   type: 'console.page/route',
-    //   properties: {
-    //     path: '/app-studio',
-    //     exact: true,
-    //     component: {
-    //       $codeRef: 'PipelineRuns',
-    //     },
-    //   },
-    // },
-    // {
-    //   type: 'core.page/route',
-    //   properties: {
-    //     path: '/app-studio',
-    //     exact: true,
-    //     component: {
-    //       $codeRef: 'PipelineRuns',
-    //     },
+    //     name: 'PipelineRuns',
     //   },
     // },
     // {

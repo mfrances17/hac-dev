@@ -5,8 +5,7 @@ import { NamespaceContext } from '../../../components/NamespacedPage/NamespacedP
 import { PipelineRunGroupVersionKind } from '../../models';
 import { PipelineRunKind } from '../../types';
 import { calculateDuration } from '../../utils/pipeline-utils';
-import './TriggeredBySection.scss';
-import './PipelineRunDetails.scss';
+import './PipelineRunDetailsView.scss';
 
 export interface PipelineRunDetailsProps {}
 
@@ -37,58 +36,57 @@ export const PipelineRunsDetailsView: React.FC<PipelineRunDetailsProps> = () => 
   return (
     <>
       <div className="co-m-pane__body odc-pipeline-run-details">
-        {/* <PipelineRunDetailsSection pipelineRun={pipelineRuns} /> */}
-        <dt className="dt">Name</dt>
-        <dd className="dd">{pipelineRun.metadata.name}</dd>
+        <dt className="hacbs-dt">Name</dt>
+        <dd className="hacbs-dd">{pipelineRun.metadata.name}</dd>
 
-        <dt className="dt">Namespace</dt>
-        <dd className="dd">{pipelineRun.metadata.namespace}</dd>
+        <dt className="hacbs-dt">Namespace</dt>
+        <dd className="hacbs-dd">{pipelineRun.metadata.namespace}</dd>
 
-        <dt className="dt">Labels</dt>
-        <dd className="dd">{'---'}</dd>
+        <dt className="hacbs-dt">Labels</dt>
+        <dd className="hacbs-dd">{'---'}</dd>
 
-        <dt className="dt">Created at</dt>
-        <dd className="dd">{'---'}</dd>
+        <dt className="hacbs-dt">Created at</dt>
+        <dd className="hacbs-dd">{'---'}</dd>
 
-        <dt className="dt">Owner</dt>
-        <dd className="dd">{'---'}</dd>
+        <dt className="hacbs-dt">Owner</dt>
+        <dd className="hacbs-dd">{'---'}</dd>
 
-        <dt className="dt">Duration:</dt>
-        <dd className="dd">{duration}</dd>
+        <dt className="hacbs-dt">Duration:</dt>
+        <dd className="hacbs-dd">{duration}</dd>
 
-        <dt className="dt">Status</dt>
-        <dd className="dd">
+        <dt className="hacbs-dt">Status</dt>
+        <dd className="hacbs-dd">
           {pipelineRun.status.conditions[0].status === 'False' ? 'Failed' : 'Succeeded'}
         </dd>
 
-        <dt className="dt">Message</dt>
-        <dd className="dd"> {pipelineRun.status.conditions[0].message}</dd>
+        <dt className="hacbs-dt">Message</dt>
+        <dd className="hacbs-dd"> {pipelineRun.status.conditions[0].message}</dd>
 
-        <dt className="dt">Log snippet</dt>
-        <dd className="dd">{'---'}</dd>
+        <dt className="hacbs-dt">Log snippet</dt>
+        <dd className="hacbs-dd">{'---'}</dd>
 
-        <dt className="dt">Triggered by</dt>
-        <dd className="dd">{'---'}</dd>
+        <dt className="hacbs-dt">Triggered by</dt>
+        <dd className="hacbs-dd">{'---'}</dd>
 
-        <dt className="dt">Application</dt>
-        <dd className="dd">{'---'}</dd>
+        <dt className="hacbs-dt">Application</dt>
+        <dd className="hacbs-dd">{'---'}</dd>
 
-        <dt className="dt">Component</dt>
-        <dd className="dd">
+        <dt className="hacbs-dt">Component</dt>
+        <dd className="hacbs-dd">
           {pipelineRun.metadata.labels['build.appstudio.openshift.io/component']}
         </dd>
 
-        <dt className="dt">Source</dt>
-        <dd className="dd">{'---'}</dd>
+        <dt className="hacbs-dt">Source</dt>
+        <dd className="hacbs-dd">{'---'}</dd>
 
-        <dt className="dt">Workspace</dt>
-        <dd className="dd">{'---'}</dd>
+        <dt className="hacbs-dt">Workspace</dt>
+        <dd className="hacbs-dd">{'---'}</dd>
 
-        <dt className="dt">Compliance</dt>
-        <dd className="dd">{'---'}</dd>
+        <dt className="hacbs-dt">Compliance</dt>
+        <dd className="hacbs-dd">{'---'}</dd>
 
-        <dt className="dt">Environment</dt>
-        <dd className="dd">{'---'}</dd>
+        <dt className="hacbs-dt">Environment</dt>
+        <dd className="hacbs-dd">{'---'}</dd>
       </div>
     </>
   );

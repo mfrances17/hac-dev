@@ -50,7 +50,7 @@ const PipelineListRow: React.FC<RowFunctionArgs<PipelineRunKind>> = ({ obj }) =>
                 setKebabOpen(false);
               }}
             >
-              Rerun{' '}
+              Rerun
             </DropdownItem>,
             <DropdownItem
               key="action"
