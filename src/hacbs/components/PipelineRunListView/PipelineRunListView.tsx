@@ -22,7 +22,7 @@ import { PipelineRunKind } from '../../types';
 import { PipelineRunListHeader } from './PipelineRunListHeader';
 import PipelineRunListRow from './PipelineRunListRow';
 
-const PipelineRunsListView: React.FC = () => {
+export const PipelineRunListView: React.FC = () => {
   const { namespace } = React.useContext(NamespaceContext);
 
   const [pipelineRuns, loaded] = useK8sWatchResource<PipelineRunKind[]>({
@@ -90,4 +90,4 @@ const PipelineRunsListView: React.FC = () => {
   );
 };
 
-export default PipelineRunsListView;
+export default PipelineRunListView;

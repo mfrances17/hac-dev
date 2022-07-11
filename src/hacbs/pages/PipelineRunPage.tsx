@@ -5,8 +5,8 @@ import NamespacedPage from '../../components/NamespacedPage/NamespacedPage';
 import PageLayout from '../../components/PageLayout/PageLayout';
 import { useQuickstartCloseOnUnmount } from '../../hooks/useQuickstartCloseOnUnmount';
 import { getQueryArgument } from '../../shared/utils';
-import PipelineDetailsView from '../components/PipelineRunDetailsView/PipelineRunDetailsView';
-import PipelineRunsListView from '../components/PipelineRunListView/PipelineRunsListView';
+import { PipelineRunDetailsView } from '../components/PipelineRunDetailsView/PipelineRunDetailsView';
+import { PipelineRunListView } from '../components/PipelineRunListView/PipelineRunListView';
 
 const PipelineRunPage = () => {
   useQuickstartCloseOnUnmount();
@@ -19,7 +19,7 @@ const PipelineRunPage = () => {
           <Helmet>
             <title>PipelineRun Details Page</title>
           </Helmet>
-          <PipelineDetailsView />
+          <PipelineRunDetailsView pipelineRunName={pipelineRunName} />
         </React.Fragment>
       ) : (
         <React.Fragment>
@@ -32,7 +32,7 @@ const PipelineRunPage = () => {
               variant={PageSectionVariants.light}
               isFilled
             >
-              <PipelineRunsListView />
+              <PipelineRunListView />
             </PageSection>
           </PageLayout>
         </React.Fragment>

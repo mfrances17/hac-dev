@@ -7,15 +7,17 @@ import { PipelineRunKind } from '../../types';
 import { calculateDuration } from '../../utils/pipeline-utils';
 import './PipelineRunDetailsView.scss';
 
-export interface PipelineRunDetailsProps {}
+type PipelineRunDetailsProps = {
+  pipelineRunName: string;
+};
 
-export const PipelineRunsDetailsView: React.FC<PipelineRunDetailsProps> = () => {
+export const PipelineRunDetailsView: React.FC<PipelineRunDetailsProps> = ({ pipelineRunName }) => {
   const { namespace } = React.useContext(NamespaceContext);
 
-  const [pipelineRuns, loaded] = useK8sWatchResource<PipelineRunKind[]>({
+  const [pipelineRun, loaded] = useK8sWatchResource<PipelineRunKind>({
     groupVersionKind: PipelineRunGroupVersionKind,
+    name: pipelineRunName,
     namespace,
-    isList: true,
   });
 
   if (!loaded) {
@@ -26,21 +28,21 @@ export const PipelineRunsDetailsView: React.FC<PipelineRunDetailsProps> = () => 
     );
   }
 
-  const pipelineRun = pipelineRuns[0];
-
   const duration = calculateDuration(
-    typeof pipelineRun.status.startTime === 'string' ? pipelineRun.status.startTime : '',
-    typeof pipelineRun.status.completionTime === 'string' ? pipelineRun.status.completionTime : '',
+    typeof pipelineRun?.status?.startTime === 'string' ? pipelineRun?.status?.startTime : '',
+    typeof pipelineRun?.status?.completionTime === 'string'
+      ? pipelineRun?.status?.completionTime
+      : '',
   );
 
   return (
     <>
       <div className="co-m-pane__body odc-pipeline-run-details">
         <dt className="hacbs-dt">Name</dt>
-        <dd className="hacbs-dd">{pipelineRun.metadata.name}</dd>
+        <dd className="hacbs-dd">{pipelineRun?.metadata?.name}</dd>
 
         <dt className="hacbs-dt">Namespace</dt>
-        <dd className="hacbs-dd">{pipelineRun.metadata.namespace}</dd>
+        <dd className="hacbs-dd">{pipelineRun?.metadata?.namespace}</dd>
 
         <dt className="hacbs-dt">Labels</dt>
         <dd className="hacbs-dd">{'---'}</dd>
@@ -56,11 +58,11 @@ export const PipelineRunsDetailsView: React.FC<PipelineRunDetailsProps> = () => 
 
         <dt className="hacbs-dt">Status</dt>
         <dd className="hacbs-dd">
-          {pipelineRun.status.conditions[0].status === 'False' ? 'Failed' : 'Succeeded'}
+          {pipelineRun.status?.conditions[0]?.status === 'False' ? 'Failed' : 'Succeeded'}
         </dd>
 
         <dt className="hacbs-dt">Message</dt>
-        <dd className="hacbs-dd"> {pipelineRun.status.conditions[0].message}</dd>
+        <dd className="hacbs-dd"> {pipelineRun?.status?.conditions[0]?.message}</dd>
 
         <dt className="hacbs-dt">Log snippet</dt>
         <dd className="hacbs-dd">{'---'}</dd>
@@ -73,7 +75,7 @@ export const PipelineRunsDetailsView: React.FC<PipelineRunDetailsProps> = () => 
 
         <dt className="hacbs-dt">Component</dt>
         <dd className="hacbs-dd">
-          {pipelineRun.metadata.labels['build.appstudio.openshift.io/component']}
+          {pipelineRun?.metadata?.labels['build.appstudio.openshift.io/component']}
         </dd>
 
         <dt className="hacbs-dt">Source</dt>
@@ -92,4 +94,4 @@ export const PipelineRunsDetailsView: React.FC<PipelineRunDetailsProps> = () => 
   );
 };
 
-export default PipelineRunsDetailsView;
+export default PipelineRunDetailsView;
