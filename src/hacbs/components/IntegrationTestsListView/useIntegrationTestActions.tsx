@@ -31,5 +31,14 @@ export const useIntegrationTestActions = (
       id: `delete-${integrationTest.metadata.name.toLowerCase()}`,
       label: 'Remove',
     },
+    {
+      cta: {
+        href: `/app-studio/applications/${
+          integrationTest.spec.application
+        }/integration-test/${integrationTest.metadata.name.toLowerCase()}`,
+      },
+      id: `edit-${integrationTest.metadata.name.toLowerCase()}`,
+      label: 'Edit',
+    },
   ];
 };

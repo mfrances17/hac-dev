@@ -10,10 +10,12 @@ import '../../../shared/style.scss';
 
 type IntegrationTestFormProps = {
   applicationName: string;
+  integrationTestName?: string;
 };
 
 const IntegrationTestForm: React.FunctionComponent<IntegrationTestFormProps> = ({
   applicationName,
+  integrationTestName,
 }) => {
   const { dirty, handleSubmit, handleReset, isSubmitting, status, errors } = useFormikContext();
   const footer = (
@@ -38,7 +40,7 @@ const IntegrationTestForm: React.FunctionComponent<IntegrationTestFormProps> = (
         },
         { path: '#', name: 'Integration test' },
       ]}
-      title="Add integration test"
+      title={`${!integrationTestName ? 'Add' : 'Edit'} integration test`}
       description={
         <>
           Add an integration test to test all your components.
@@ -53,7 +55,7 @@ const IntegrationTestForm: React.FunctionComponent<IntegrationTestFormProps> = (
       <PageSection isFilled variant={PageSectionVariants.light}>
         <Form onSubmit={handleSubmit}>
           <FormSection>
-            <IntegrationTestSection isInPage />
+            <IntegrationTestSection isInPage integrationTestName={integrationTestName} />
           </FormSection>
         </Form>
       </PageSection>

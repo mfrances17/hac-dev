@@ -13,6 +13,7 @@ type IntegrationTestViewProps = {
 
 const IntegrationTestView: React.FunctionComponent<IntegrationTestViewProps> = ({
   applicationName,
+  integrationTestName,
 }) => {
   const navigate = useNavigate();
   const namespace = useNamespace();
@@ -23,6 +24,16 @@ const IntegrationTestView: React.FunctionComponent<IntegrationTestViewProps> = (
       bundle: '',
       pipeline: '',
       optional: false,
+    },
+    isDetected: true,
+  };
+
+  const savedValues = {
+    integrationTest: {
+      name: 'my integration test',
+      bundle: 'my bundle',
+      pipeline: 'my pipeline',
+      optional: true,
     },
     isDetected: true,
   };
@@ -44,10 +55,16 @@ const IntegrationTestView: React.FunctionComponent<IntegrationTestViewProps> = (
     <Formik
       onSubmit={handleSubmit}
       onReset={() => navigate(-1)}
-      initialValues={initialValues}
+      initialValues={integrationTestName ? savedValues : initialValues}
       validationSchema={integrationTestValidationSchema}
     >
-      {(props) => <IntegrationTestForm applicationName={applicationName} {...props} />}
+      {(props) => (
+        <IntegrationTestForm
+          applicationName={applicationName}
+          integrationTestName={integrationTestName}
+          {...props}
+        />
+      )}
     </Formik>
   );
 };

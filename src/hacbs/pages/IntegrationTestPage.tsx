@@ -5,14 +5,14 @@ import NamespacedPage from '../../components/NamespacedPage/NamespacedPage';
 import IntegrationTestView from '../components/IntegrationTestForm/IntegrationTestView';
 
 const IntegrationTestPage: React.FunctionComponent = () => {
-  const { appName } = useParams();
+  const { appName, testName } = useParams();
 
   return (
     <NamespacedPage>
       <Helmet>
         <title>Create integration test</title>
       </Helmet>
-      <IntegrationTestView applicationName={appName} />
+      <IntegrationTestView applicationName={appName} integrationTestName={testName} />
     </NamespacedPage>
   );
 };

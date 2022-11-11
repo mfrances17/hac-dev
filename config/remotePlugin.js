@@ -92,6 +92,32 @@ const hacbs = {
     {
       type: 'console.page/route',
       properties: {
+        path: '/app-studio/applications/:appName/integration-test/:testName',
+        exact: true,
+        component: {
+          $codeRef: 'HACBSIntegrationTest',
+        },
+      },
+      flags: {
+        required: ['HACBS', 'SIGNUP'],
+      },
+    },
+    {
+      type: 'core.page/route',
+      properties: {
+        path: '/app-studio/applications/:appName/integration-test/:testName',
+        exact: true,
+        component: {
+          $codeRef: 'HACBSIntegrationTest',
+        },
+      },
+      flags: {
+        required: ['HACBS', 'SIGNUP'],
+      },
+    },
+    {
+      type: 'console.page/route',
+      properties: {
         path: '/app-studio/:appName/commit/:commitName',
         exact: true,
         component: {
