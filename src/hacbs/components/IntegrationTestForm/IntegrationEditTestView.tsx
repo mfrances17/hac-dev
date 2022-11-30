@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  // k8sPatchResource,
+  // k8sUpdateResource,
   useK8sWatchResource,
 } from '@openshift/dynamic-plugin-sdk-utils';
 import { Bullseye, Spinner } from '@patternfly/react-core';
@@ -60,29 +60,29 @@ const IntegrationEditTestView: React.FunctionComponent<IntegrationTestViewProps>
       isDetected: true,
     };
   }
+  // Uncaught (in promise) Error: Resource payload name not specified
+  const updateIntegrationTest = (values) => {
+    // eslint-disable-next-line no-console
+    console.log(`values: ${JSON.stringify(values, null, 4)}`);
+    // try {
+    //   k8sUpdateResource({
+    //     model: IntegrationTestScenarioModel,
+    //     resource: values.integrationTest,
+    //     },
+    //  )
+    //     .then(() => {
+    //       navigate(`/app-studio/applications/${applicationName}?activeTab=integrationtests`);
+    //     });
+    // } catch (error) {
+    //   // eslint-disable-next-line no-console
+    //   console.warn('Error while updating integration test:', error);
+    // }
+  };
 
-  // const updateIntegrationTest = (values) => {
-  //   try {
-  //     k8sPatchResource({
-  //       model: IntegrationTestScenarioModel,
-  //       queryOptions: {
-  //         name: intTest.metadata.name,
-  //         ns: intTest.metadata.namespace,
-  //       },
-  //       patches: [{ op: 'replace', path: '/spec/IntegrationTest', value: values }],
-  //     });
-  //   } catch {
-  //     (error) => {
-  //       console.warn('Error while updating integration test:', error);
-  //     };
-  //   }
-  // };
-
-  // const handleSubmit = (values) => {
-  //   // not working yet
-  //   return updateIntegrationTest(values.integrationTest);
-  // };
-  const handleSubmit = () => {};
+  const handleSubmit = (values) => {
+    // not working yet
+    return updateIntegrationTest(values);
+  };
 
   return (
     <Formik

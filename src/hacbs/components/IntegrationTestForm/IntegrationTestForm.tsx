@@ -20,7 +20,7 @@ const IntegrationTestForm: React.FunctionComponent<IntegrationTestFormProps> = (
   const { dirty, handleSubmit, handleReset, isSubmitting, status, errors } = useFormikContext();
   const footer = (
     <FormFooter
-      submitLabel="Add integration test"
+      submitLabel={`${!integrationTestName ? 'Add' : 'Save'} integration test`}
       handleCancel={handleReset}
       handleSubmit={handleSubmit}
       isSubmitting={isSubmitting}
@@ -43,7 +43,7 @@ const IntegrationTestForm: React.FunctionComponent<IntegrationTestFormProps> = (
       title={`${!integrationTestName ? 'Add' : 'Edit'} integration test`}
       description={
         <>
-          Add an integration test to test all your components.
+          Specify an integration test to test all your components.
           <br />
           By default, previous GitHub credentials will be used to validate your URL. If it fails,
           you must revalidate with a different repo.
